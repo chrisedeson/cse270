@@ -1,0 +1,330 @@
+{
+  "id": "smoke-test-project",
+  "version": "2.0",
+  "name": "Smoke Test",
+  "url": "http://127.0.0.1:5500",
+  "tests": [
+    {
+      "id": "test-1-logo-header-title",
+      "name": "Test 1 - Logo Header and Title",
+      "commands": [
+        {
+          "id": "cmd-1-1",
+          "comment": "Navigate to home page",
+          "command": "open",
+          "target": "/teton/1.6/index.html",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "cmd-1-2",
+          "comment": "Verify logo is displayed",
+          "command": "assertElementPresent",
+          "target": "css=.header-logo img",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "cmd-1-3",
+          "comment": "Verify heading text",
+          "command": "assertText",
+          "target": "css=.header-title h1",
+          "targets": [],
+          "value": "Teton Idaho"
+        },
+        {
+          "id": "cmd-1-4",
+          "comment": "Verify subheading text",
+          "command": "assertText",
+          "target": "css=.header-title h2",
+          "targets": [],
+          "value": "Chamber of Commerce"
+        },
+        {
+          "id": "cmd-1-5",
+          "comment": "Verify browser tab title",
+          "command": "assertTitle",
+          "target": "Teton Idaho CoC",
+          "targets": [],
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "test-2-spotlights-join",
+      "name": "Test 2 - Home Page Spotlights and Join Feature",
+      "commands": [
+        {
+          "id": "cmd-2-1",
+          "comment": "Navigate to home page",
+          "command": "open",
+          "target": "/teton/1.6/index.html",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "cmd-2-2",
+          "comment": "Set window size large enough for full nav",
+          "command": "setWindowSize",
+          "target": "1920x1080",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "cmd-2-3",
+          "comment": "Wait for spotlights to load",
+          "command": "pause",
+          "target": "2000",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "cmd-2-4",
+          "comment": "Verify spotlights are present",
+          "command": "assertElementPresent",
+          "target": "css=.main-spotlight .spotlight1",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "cmd-2-5",
+          "comment": "Verify second spotlight is present",
+          "command": "assertElementPresent",
+          "target": "css=.main-spotlight .spotlight2",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "cmd-2-6",
+          "comment": "Verify Join Us link is present",
+          "command": "assertElementPresent",
+          "target": "linkText=Join Us!",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "cmd-2-7",
+          "comment": "Click the Join Us link",
+          "command": "click",
+          "target": "linkText=Join Us!",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "cmd-2-8",
+          "comment": "Verify we are on join page",
+          "command": "assertElementPresent",
+          "target": "css=.join-wizard-main",
+          "targets": [],
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "test-3-directory-grid-list",
+      "name": "Test 3 - Directory Grid and List Feature",
+      "commands": [
+        {
+          "id": "cmd-3-1",
+          "comment": "Navigate to directory page",
+          "command": "open",
+          "target": "/teton/1.6/directory.html",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "cmd-3-2",
+          "comment": "Wait for business data to load",
+          "command": "pause",
+          "target": "2000",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "cmd-3-3",
+          "comment": "Click the Grid button",
+          "command": "click",
+          "target": "id=directory-grid",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "cmd-3-4",
+          "comment": "Verify Teton Turf and Tree is displayed in cards",
+          "command": "assertText",
+          "target": "css=#directory-data",
+          "targets": [],
+          "value": "*Teton Turf and Tree*"
+        },
+        {
+          "id": "cmd-3-5",
+          "comment": "Click the List button",
+          "command": "click",
+          "target": "id=directory-list",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "cmd-3-6",
+          "comment": "Verify Teton Turf and Tree is displayed in list",
+          "command": "assertText",
+          "target": "css=#directory-data",
+          "targets": [],
+          "value": "*Teton Turf and Tree*"
+        }
+      ]
+    },
+    {
+      "id": "test-4-join-data-entry",
+      "name": "Test 4 - Join Page Data Entry",
+      "commands": [
+        {
+          "id": "cmd-4-1",
+          "comment": "Navigate to join page",
+          "command": "open",
+          "target": "/teton/1.6/join.html",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "cmd-4-2",
+          "comment": "Verify First Name input is present",
+          "command": "assertElementPresent",
+          "target": "name=fname",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "cmd-4-3",
+          "comment": "Fill in First Name",
+          "command": "type",
+          "target": "name=fname",
+          "targets": [],
+          "value": "John"
+        },
+        {
+          "id": "cmd-4-4",
+          "comment": "Fill in Last Name",
+          "command": "type",
+          "target": "name=lname",
+          "targets": [],
+          "value": "Doe"
+        },
+        {
+          "id": "cmd-4-5",
+          "comment": "Fill in Business Name",
+          "command": "type",
+          "target": "name=bizname",
+          "targets": [],
+          "value": "Test Business"
+        },
+        {
+          "id": "cmd-4-6",
+          "comment": "Fill in Title",
+          "command": "type",
+          "target": "name=biztitle",
+          "targets": [],
+          "value": "Manager"
+        },
+        {
+          "id": "cmd-4-7",
+          "comment": "Click Next Step",
+          "command": "click",
+          "target": "name=submit",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "cmd-4-8",
+          "comment": "Verify Email input is present on step 2",
+          "command": "assertElementPresent",
+          "target": "name=email",
+          "targets": [],
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "test-5-admin-login",
+      "name": "Test 5 - Admin Page Username/Password",
+      "commands": [
+        {
+          "id": "cmd-5-1",
+          "comment": "Navigate to admin page",
+          "command": "open",
+          "target": "/teton/1.6/admin.html",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "cmd-5-2",
+          "comment": "Verify Username input is present",
+          "command": "assertElementPresent",
+          "target": "id=username",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "cmd-5-3",
+          "comment": "Fill in incorrect username",
+          "command": "type",
+          "target": "id=username",
+          "targets": [],
+          "value": "wronguser"
+        },
+        {
+          "id": "cmd-5-4",
+          "comment": "Fill in incorrect password",
+          "command": "type",
+          "target": "id=password",
+          "targets": [],
+          "value": "wrongpassword"
+        },
+        {
+          "id": "cmd-5-5",
+          "comment": "Click Login button",
+          "command": "click",
+          "target": "css=.mysubmit",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "cmd-5-6",
+          "comment": "Wait for error message",
+          "command": "pause",
+          "target": "2000",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "cmd-5-7",
+          "comment": "Verify error message is displayed",
+          "command": "assertText",
+          "target": "css=.errorMessage",
+          "targets": [],
+          "value": "Invalid username and password."
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "smoke-suite",
+      "name": "Smoke Test Suite",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": [
+        "test-1-logo-header-title",
+        "test-2-spotlights-join",
+        "test-3-directory-grid-list",
+        "test-4-join-data-entry",
+        "test-5-admin-login"
+      ]
+    }
+  ],
+  "urls": [
+    "http://127.0.0.1:5500"
+  ],
+  "plugins": []
+}
